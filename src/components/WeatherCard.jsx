@@ -50,9 +50,9 @@ export const WeatherCard = ({ weather, temp }) => {
             <BiMap className="card__icon-geo" /> {weather?.name}{" "}
             {weather?.sys.country}
           </h2>
-          <h2 className="card__fecha">{isDate}</h2>
+          <h2 className="card__date">{isDate}</h2>
 
-          <h2 className="hora-actual">{isTime}</h2>
+          <h2 className="current-time">{isTime}</h2>
 
           <div className="card__info">
             <ul className="card__list">
@@ -79,7 +79,7 @@ export const WeatherCard = ({ weather, temp }) => {
         </div>
 
         <div className="icon-nube">
-          <div className="grados">
+          <div className="degrees">
             <h3 className="card__temp">
               {isCelsius ? `${temp?.celsius} °C` : `${temp?.farenheid} °F`}
             </h3>
@@ -110,7 +110,6 @@ export const WeatherCard = ({ weather, temp }) => {
           </h3>
         </div>
       </section>
-      <footer className="card__footer"></footer>
     </article>
   );
 };
