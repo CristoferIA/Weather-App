@@ -1,7 +1,8 @@
-import './App.css'
+import "./App.css";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { WeatherCard } from "./components/WeatherCard";
+import Loading from "./components/Loading";
 
 function App() {
   const [coords, setCoords] = useState();
@@ -32,7 +33,7 @@ function App() {
           const farenheid = (celsius * (9 / 5) + 32).toFixed(0);
           setTemp({
             celsius,
-            farenheid
+            farenheid,
           });
         })
         .catch((err) => console.log(err));
@@ -41,11 +42,14 @@ function App() {
 
   return (
     <div className="App">
-      <div className='App__image'></div>
-      <WeatherCard 
-        weather={weather}
-        temp = {temp}
-        ></WeatherCard>
+      {weather ? (
+        <>
+          <div className="App__image"></div>
+          <WeatherCard weather={weather} temp={temp}></WeatherCard>
+        </>
+      ) : (
+        <Loading></Loading>
+      )}
     </div>
   );
 }
