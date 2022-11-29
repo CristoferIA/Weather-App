@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.App{
+  
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: rgb(74, 167, 255);
+}
+.App__image{
+  background-image: url('/images/fondo-clima2.jpg');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  opacity: 0.7;
+}
+.card{
+  width: 100%;
+  max-width: 500px;
+  background-color: rgba(195, 230, 255, 0.9);
+  box-shadow: 0px 0px 20px 5px rgba(22, 22, 22, 0.2);
+  border: 1px solid rgb(40, 149, 238);
+  z-index: 10;
+  border-radius: 10px;
+  padding: 10px;
+  font-family: Roboto;
+}
+
+.card__title{
+  text-align: center;
+  font-weight: lighter;
+  font-size: 2rem;
+  text-shadow: 0px 0px 10px rgba(160, 160, 160, 0.5);
+}
+
+.card__subtitle{
+  display: flex;
+  align-items: center;
+  font-weight: normal;
+  font-size: 1rem;
+  justify-content: center;
+  width: 100%;
+}
+
+.card__fecha{
+  font-weight: normal;
+  font-size: 1.2rem;
+  width: 100%;
+  text-align: center;
+}
+.card__icon-geo{
+  font-size: 1.4rem;
+  margin-right: 5px;
+}
+
+.card__icon-container{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  
+}
+
+.card__data-temp{
+  /*background-color: rgb(0, 255, 76); */
+  box-sizing: content-box;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 0.8rem;
+}
+.card__temp{
+  font-size: 4rem;
+  font-weight: lighter;
+  
+}
+.grados{
+  display: flex;
+  gap: 0.7rem;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+}
+.card__btn{
+  margin-top: 8px;
+  font-size: 1rem;
+  border: none;
+  background-color: rgba(255, 255, 255, 0);
+  cursor: pointer;
+  color: rgb(104, 104, 104);
+}
+.card__btn:hover{
+  color: rgb(104, 104, 104);
+  font-weight: bold;
+}
+
+.icon-nube{ 
+  box-sizing: content-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*background-color: aqua;*/
+  gap: 0.3rem;
+}
+.card__description{
+  font-weight: normal;
+  color: rgb(60, 90, 90);
+  font-style: italic;
+}
+
+.hora-actual{
+  font-weight: normal;
+  font-size: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.div-nube{
+  height: 7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+.card-icon{
+  width: 12rem;
+}
+
+.card__info{
+  box-sizing: content-box;
+  padding: 0.2rem;
+}
+.card__list{
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  color: rgb(60, 90, 90);
+}
+
+@media (max-width: 499px) {
+  .card{
+    margin: 0 1rem ;
+  }
+  .card__title{
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    font-weight: normal;
+    color: rgb(104, 115, 130);
+  }
+  .card__icon-container{
+    grid-template-columns: 1fr;
+  }
+
+  .card__data-temp{
+    grid-row: 2;
+  }
+
+  .card__info{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+}
